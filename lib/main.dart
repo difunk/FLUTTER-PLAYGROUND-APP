@@ -1,8 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+String name = "test";
+int number = 1;
+double test = 1.0;
+List myList = ["test", "test2"];
+Map<String, dynamic> myMap = {'String': "String", "String2": 44444};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,8 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
+      ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -47,7 +61,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Text("Hello", style: TextStyle(color: Colors.black)),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: EdgeInsets.all(50.0),
+          margin: EdgeInsets.all(50.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.0),
+            color: Colors.red,
+          ),
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            padding: EdgeInsets.all(50.0),
+            margin: EdgeInsets.all(50.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.blue,
+            ),
+            child: Text("Test", style: TextStyle(color: Colors.black)),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
