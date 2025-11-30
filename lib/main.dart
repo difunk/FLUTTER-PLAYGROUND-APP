@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -62,24 +60,36 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          width: double.infinity,
+          color: Colors.black38,
           height: double.infinity,
-          padding: EdgeInsets.all(50.0),
-          margin: EdgeInsets.all(50.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25.0),
-            color: Colors.red,
-          ),
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            padding: EdgeInsets.all(50.0),
-            margin: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: Colors.blue,
-            ),
-            child: Text("Test", style: TextStyle(color: Colors.black)),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.blue,
+                ),
+                child: Center(
+                  child: Text("Test", style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.blue,
+                ),
+                child: Center(
+                  child: Text("Test", style: TextStyle(color: Colors.white)),
+                ),
+              ),
+            ],
           ),
         ),
       ),
