@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/widget_tree.dart';
 import 'package:flutter_application_1/widgets/navbar_widget.dart';
 
 void main() {
@@ -20,24 +21,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePage();
-}
-
-class _MyHomePage extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title!), centerTitle: true),
-      bottomNavigationBar: NavbarWidget(),
+      home: WidgetTree(),
     );
   }
 }
