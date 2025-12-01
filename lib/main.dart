@@ -4,6 +4,8 @@ void main() {
   runApp(const MyApp());
 }
 
+String? title = "Flutter";
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -18,33 +20,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text("Flutter"), centerTitle: true),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              DrawerHeader(child: Text("Drawer")),
-              ListTile(title: Text("Logout")),
-            ],
-          ),
-        ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                print("test");
-              },
-              child: Icon(Icons.add),
-            ),
-            SizedBox(height: 10.0),
-            FloatingActionButton(
-              onPressed: () {
-                print("test");
-              },
-              child: Icon(Icons.add),
-            ),
-          ],
-        ),
+        appBar: AppBar(title: Text(title!), centerTitle: true),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon((Icons.home)), label: "home"),
