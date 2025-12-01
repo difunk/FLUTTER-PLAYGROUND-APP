@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/navbar_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.from(
+      theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,
           brightness: Brightness.dark,
@@ -32,27 +33,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePage extends State<MyHomePage> {
-  int currenIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title!), centerTitle: true),
-      body: currenIndex == 0
-          ? Center(child: Text("1"))
-          : Center(child: Text("2")),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon((Icons.home)), label: "home"),
-          NavigationDestination(icon: Icon((Icons.person)), label: "profile"),
-        ],
-        onDestinationSelected: (int value) {
-          setState(() {
-            currenIndex = value;
-          });
-        },
-        selectedIndex: currenIndex,
-      ),
+      bottomNavigationBar: NavbarWidget(),
     );
   }
 }
