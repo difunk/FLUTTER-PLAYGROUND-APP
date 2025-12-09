@@ -9,7 +9,8 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController controller = TextEditingController();
-  bool isChecked = false;
+  bool? isChecked = false;
+  bool? isApproved = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,26 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           Text(controller.text),
-          Checkbox(value: isChecked, onChanged:(value) => ,),
+          CheckboxListTile(
+            tristate: true,
+            title: Text("Check"),
+            value: isChecked,
+            onChanged: (bool? value) {
+              setState(() {
+                isChecked = value;
+              });
+            },
+          ),
+          CheckboxListTile(
+            tristate: true,
+            title: Text("Approve"),
+            value: isApproved,
+            onChanged: (bool? value) {
+              setState(() {
+                isApproved = value;
+              });
+            },
+          ),
         ],
       ),
     );
