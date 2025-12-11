@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/notifiers.dart';
 import 'package:flutter_application_1/views/pages/home_page.dart';
 import 'package:flutter_application_1/views/pages/profile_page.dart';
+import 'package:flutter_application_1/views/pages/settings_page.dart';
 import 'package:flutter_application_1/views/widgets/navbar_widget.dart';
 
 List<Widget> pages = [HomePage(), ProfilePage()];
@@ -22,9 +23,22 @@ class WidgetTree extends StatelessWidget {
             icon: ValueListenableBuilder(
               valueListenable: isDarkModeNotifier,
               builder: (context, isDarkMode, child) {
-                return Icon(isDarkMode ? Icons.dark_mode : Icons.light_mode);
+                return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
