@@ -46,6 +46,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
                 child: Text("Open Snackbar"),
               ),
+              Divider(color: Colors.teal, thickness: 5.0, endIndent: 200.0),
               ElevatedButton(
                 onPressed: () {
                   showDialog(
