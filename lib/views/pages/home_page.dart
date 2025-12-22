@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/constants.dart';
+import 'package:flutter_application_1/views/pages/course_page.dart';
 import 'package:flutter_application_1/views/widgets/container_widget.dart';
 import 'package:flutter_application_1/views/widgets/hero_widget.dart';
 
@@ -16,11 +17,12 @@ class HomePage extends StatelessWidget {
     ];
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            HeroWidget(title: "Home"),
+            SizedBox(height: 10.0),
+            HeroWidget(title: "Home", nextPage: CoursePage()),
             ...List.generate(4, (index) {
               return ContainerWidget(
                 title: list[index].$1,
